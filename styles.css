@@ -1,0 +1,160 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* USSD Container */
+.ussd-container {
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.ussd-header {
+    background-color: #075e54;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrier {
+    font-weight: bold;
+}
+
+.time {
+    font-size: 0.9em;
+}
+
+/* Display area */
+.ussd-display {
+    height: 250px;
+    padding: 15px;
+    background-color: #e5e5e5;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.ussd-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.message {
+    padding: 8px 12px;
+    border-radius: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message.received {
+    background-color: #fff;
+    align-self: flex-start;
+    border: 1px solid #ddd;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.prompt {
+    color: #075e54;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#ussd-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    background: transparent;
+}
+
+/* Keypad */
+.ussd-keypad {
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.keypad-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.key:active {
+    background-color: #e0e0e0;
+    transform: scale(0.95);
+}
+
+.subtext {
+    font-size: 10px;
+    font-weight: normal;
+    color: #666;
+    margin-top: -5px;
+}
+
+.special {
+    width: 120px;
+    border-radius: 30px;
+    background-color: #075e54;
+    color: white;
+}
+
+/* Animation for new messages */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+    animation: fadeIn 0.3s ease-out;
+}
