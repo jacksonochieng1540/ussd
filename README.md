@@ -2,7 +2,9 @@
 
 A web-based simulation of a mobile USSD interface built with HTML, CSS, and JavaScript.
 
-![USSD Interface Screenshot](screenshot.png)
+![USSD Interface Screenshot]
+![image](https://github.com/user-attachments/assets/10ae1106-a7a7-4bc1-9a9f-96a6364019a2)
+
 
 ## Features
 
